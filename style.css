@@ -1,0 +1,135 @@
+body {
+margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #4a1c1c;
+}
+.card {
+background: rgba(255, 255, 255, 0.9);
+padding: 2.5rem 3rem;
+border-radius: 24px;
+max-width: 600px;
+text-align: center;
+box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+animation: float 6s ease-in-out infinite;
+}
+h1 {
+font-size: 2.5rem;
+margin-bottom: 1rem;
+}
+p {
+font-size: 1.1rem;
+line-height: 1.7;
+margin: 0.6rem 0;
+}
+.heart {
+font-size: 3rem;
+animation: pulse 1.5s infinite;
+margin: 0 1rem;
+}
+.heart-row {
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 1rem 0;
+}
+.heart-row img {
+width: 80px;
+height: auto;
+background: transparent;
+border-radius: 12px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.from {
+margin-top: 2rem;
+font-style: italic;
+opacity: 0.8;
+}
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.2); }
+100% { transform: scale(1); }
+}
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0px); }
+}
+
+.heart-row img.flip {
+transform: scaleX(-1);
+}
+/* pixel hearts background */
+.pixel-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.pixel-heart {
+  position: absolute;
+  width: 20px;
+  height: auto;
+  background: transparent;
+  opacity: 0.85;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(110vh);
+  }
+  to {
+    transform: translateY(-10vh);
+  }
+}
+
+/* make sure card stays above hearts */
+.card {
+  position: relative;
+  z-index: 1;
+}
+.pixel-cat {
+  position: absolute;
+  width: 36px;
+  height: auto;
+  background: transparent;
+  opacity: 0.9;
+  animation: floatUp linear infinite;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
+}
+#yesBtn {
+  background: linear-gradient(135deg, #ff6b81, #ff9aa2);
+  color: white;
+  box-shadow: 0 10px 20px rgba(255, 107, 129, 0.4);
+}
+
+#yesBtn:hover {
+  transform: scale(0.95);
+}
+
+#noBtn {
+  background: linear-gradient(135deg, #bbb, #999);
+  color: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+#noBtn:hover {
+  transform: scale(0.95);
+}
+
+.valentine-buttons button {
+padding: 1.1rem 2.2rem;
+font-size: 1.15rem;
+font-weight: 700;
+border-radius: 18px;
+border: 2px solid rgba(255,255,255,0.6);
+cursor: pointer;
+transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
